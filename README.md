@@ -1,34 +1,34 @@
-# [Project Name] 🎯
+# [Dream Forge] 🎯
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: [Code Crusaders]
 
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Member 1: [Radhika Suresh] - [LBS Institute of Technology for Women]
+- Member 2: [Nandana A.M] - [LBS Institute of Technology for Women]
+  
 
 ### Hosted Project Link
-[mention your project hosted project link here]
+[file:///C:/Users/V%20K%20Sreeja/OneDrive/Desktop/Freelancing/freelance-frontend.html]
 
 ### Project Description
-[2-3 lines about what your project does]
+["Welcome to Dream Forge! This platform showcases my journey as a freelancer,featuring my projects,skills and passion for delivering exceptional work. Explore my portfolio,share your feedback and connect with me for collaborations that bring your ideas to life. Let's create something extraordinary together!"]
 
 ### The Problem statement
-[What ridiculous problem are you solving?]
+[Clients struggle to find a direct,personalized connectionn in crowded,generic platforms]
 
 ### The Solution
-[How are you solving it? Keep it fun!]
+[A freelancer's online playground where clients can skip the crowd,find right talent, and work with someone who actually responds to emails..usually within 24 Hours!]
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+- [HTML]
+- [CSS]
+- [JavaScript]
+
 
 For Hardware:
 - [List main components]
@@ -38,7 +38,7 @@ For Hardware:
 ### Implementation
 For Software:
 # Installation
-[commands]
+[Node.js]
 
 # Run
 [commands]
@@ -91,9 +91,9 @@ For Hardware:
 [Add any extra demo materials/links]
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+- [Radhika Suresh]: [Complete Front End and Back End Programming]
+- [Nandana A.M]: [Debugging and Code Editing]
+  
 
 ---
 Made with ❤️ at TinkerHub
