@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelance Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Times+New+Roman&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Times New Roman' Times, serif;
+            background: rgb(31, 68, 102); /* Light purple background *
+
+            color: #333;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-image: url(https://marketplace.canva.com/EAFIddqdjTk/2/0/1600w/canva-black-minimalist-motivation-quote-linkedin-banner-1PLNOKlL1HU.jpg);
+            background-size: cover;
+            padding: 15px 0;
+        }
+
+        .navbar .nav-link {
+            color: white;
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: url('https://source.unsplash.com/1600x900/?freelance,workspace') no-repeat center center;
+            background-image: url('https://i.pinimg.com/736x/a5/e9/87/a5e987c21ef627af76d0c1747828ac7d.jpg');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size:cover;
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: -1;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: 600;
+        }
+
+        .hero-section p {
+            font-size: 1.3 rem;
+            margin-bottom: 60px;
+        }
+
+        .cta-button {
+            background-color: hsl(342, 44%, 52%);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: #ec6887;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .nav-link {
+            font-size: 1.2rem;
+            margin-right: 15px;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: #c93360;
+        }
+
+        .nav-link:before {
+            content: '→';
+            position: absolute;
+            left: -20px;
+            top: 0;
+            font-size: 1.5rem;
+            color: #96445c;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .nav-link:hover:before {
+            opacity: 1;
+        }
+
+        .services, .portfolio, .contact, .feedback {
+            padding: 60px 0;
+        }
+
+        .service-card, .portfolio-item {
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover, .portfolio-item:hover {
+            transform: scale(1.05);
+        }
+
+        .service-card h5 {
+            font-weight: 600;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        /* Contact and Feedback Sections - Colorful boxes */
+        .contact-box, .feedback-box {
+            background-color: #a1e85fdd;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-box:hover, .feedback-box:hover {
+            background-color: rgba(225, 218, 83, 0.83);
+        }
+
+        .contact-box h3, .feedback-box h3 {
+            font-size: 1.75rem;
+            color: black;
+        }
+
+        .contact-box p, .feedback-box p {
+            font-size: 1.1rem;
+        }
+
+        .footer {
+            background-color: #062038;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .overview {
+            display: none;
+        }
+
+        .email-popup {
+            display: none;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            position: fixed;
+            top: 30%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+        <a class="navbar-brand text-white" href="#">My Freelance Portfolio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#services">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#portfolio">Portfolio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#feedback">Feedback</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <h1>Transforming Ideas Into Reality</h1>
+    <p>Expert freelance services to help your business grow</p>
+    <button class="cta-button" onclick="showEmail()">Hire Me</button>
+</section>
+
+<!-- Email Popup Section -->
+<div id="email-popup" class="email-popup">
+    <h4>Contact Me via Email:</h4>
+    <p>abc@gmail.com</p>
+    <button class="cta-button" onclick="closeEmail()">Close</button>
+</div>
+
+<!-- Services Section -->
+<section id="services" class="services">
+    <div class="container">
+        <h2>What I Offer</h2>
+        <div class="row">
+            <div class="col-md-7">
+                <div class="service-card text-center">
+                    <h5>Web Design</h5>
+                    <p>Creating user-friendly, modern websites that make an impact.</p>
+                </div>
+            </div>
+            <div class="col-md-15">
+                <div class="service-card text-center">
+                    <h5>Graphic Design</h5>
+                    <p>Crafting visually appealing graphics that align with your brand.</p>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="service-card text-center">
+                    <h5>Consulting</h5>
+                    <p>Providing expert guidance to grow your business online.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Portfolio Section -->
+<section id="portfolio" class="portfolio">
+    <div class="container">
+        <h2>Portfolio</h2>
+        <div class="row" id="portfolio-items">
+            <!-- Dynamic Portfolio Items will be inserted here -->
+        </div>
+        <div class="text-center">
+            <button class="cta-button" onclick="addProject()">Add Project</button>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact">
+    <div class="container">
+        <h2>Contact Me</h2>
+        <div class="contact-box">
+            <h3>Reach Out ^-^ </h3>
+            <p>If you'd like to discuss a project or get in touch, please feel free to contact me anytime!</p>
+            <form id="contact-form">
+                <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                 <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-12 mb-3">
+                        <textarea class="form-control" id="message" rows="4" placeholder="Message" required></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Feedback Section -->
+<section id="feedback" class="feedback">
+    <div class="container">
+        <h2>Real-Time Feedback</h2>
+        <div class="feedback-box">
+            <h3>Share Your Thoughts</h3>
+            <form id="feedback-form">
+                <div class="form-group">
+                    <textarea class="form-control" id="feedback-message" rows="3" placeholder="Leave your feedback..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-success">Submit Feedback</button>
+            </form>
+        </div>
+        <ul id="feedback-list" class="feedback-list">
+            <!-- Real-time feedback will be displayed here -->
+        </ul>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>&copy; 2025 Freelance Portfolio | <a href="mailto:someone@example.com">Email Me</a></p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+<script>
+  //Contact Form Submit
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    let name = document.getElementById('name').value;
+    let email = document.getElementById('email').value;
+    let message = document.getElementById('message').value;
+
+    fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, message })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.message) {
+            alert('Your message has been sent!');
+            document.getElementById('contact-form').reset();
+        } else {
+            alert('Error: ' + data.error);
+        }
+    })
+    .catch(error => console.log('Error:', error));
+});
+
+    // Feedback Form Submit
+    document.getElementById('feedback-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    let feedbackMessage = document.getElementById('feedback-message').value;
+
+    fetch('http://localhost:5000/api/feedback', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ message: feedbackMessage })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.message) {
+            let feedbackList = document.getElementById('feedback-list');
+            let newFeedback = document.createElement('li');
+            newFeedback.classList.add('feedback-item');
+            newFeedback.textContent = feedbackMessage;
+            feedbackList.appendChild(newFeedback);
+            document.getElementById('feedback-message').value = ''; // Clear input
+        } else {
+            alert('Error: ' + data.error);
+        }
+    })
+    .catch(error => console.log('Error:', error));
+});
+
+
+    // Add Project to Portfolio
+    function addProject() {
+        let portfolioItems = document.getElementById('portfolio-items');
+        let newProject = document.createElement('div');
+        newProject.classList.add('col-md-4', 'portfolio-item');
+        newProject.innerHTML = `
+            <img src="https://source.unsplash.com/1600x900/?design" alt="New Project">
+        `;
+        portfolioItems.appendChild(newProject);
+    }
+
+    // Show Email on "Hire Me" Button Click
+    function showEmail() {
+        document.getElementById('email-popup').style.display = 'block';
+    }
+
+    // Close Email Popup
+    function closeEmail() {
+        document.getElementById('email-popup').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
