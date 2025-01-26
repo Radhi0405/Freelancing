@@ -1,4 +1,4 @@
-# [Dream Forge] 🎯
+![image](https://github.com/user-attachments/assets/53c11edd-56a3-4653-852a-12689cdbfdb1)# [Dream Forge] 🎯
 
 
 ## Basic Details
@@ -47,13 +47,23 @@ For Software:
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
+
+*Add caption explaining what this shows*
+Screenshot1
+![Screenshot 2025-01-26 120123](https://github.com/user-attachments/assets/9345cd7d-3245-40ac-8738-fe585013de5a)
+(FrontPage)
+
+![Screenshot2]
+![Screenshot 2025-01-26 120156](https://github.com/user-attachments/assets/5ce7cd8e-3d33-4ff1-9d24-e84536162aa3)
+(Portfolio of Freelancer)
+
 *Add caption explaining what this shows*
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+![Screenshot3]
+![Screenshot 2025-01-26 120229](https://github.com/user-attachments/assets/4bc7ec6e-99c7-4cb8-8f52-5b9d8bb8144e)
+(Contact Info)
 
-![Screenshot3](Add screenshot 3 here with proper name)
+
 *Add caption explaining what this shows*
 
 # Diagrams
@@ -84,7 +94,7 @@ For Hardware:
 
 ### Project Demo
 # Video
-[Add your demo video link here]
+
 *Explain what the video demonstrates*
 
 # Additional Demos
